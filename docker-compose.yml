@@ -16,25 +16,9 @@ services:
       timeout: 5s
       retries: 5
 
-  backend:
-    build: ./backend
-    container_name: backend
-    depends_on:
-      mysql:
-        condition: service_healthy
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/data_visualization?createDatabaseIfNotExist=true
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: MySQL@#12
-    ports:
-      - "8080:8080"
-    restart: unless-stopped
-
   frontend:
     build: ./frontend
     container_name: frontend
-    depends_on:
-      - backend
     ports:
       - "3000:80"
     restart: unless-stopped
