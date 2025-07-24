@@ -6,16 +6,7 @@ yarn-error.log*
 dist/
 build/
 
-### Java / Maven / Spring Boot
-target/
-*.class
-*.jar
-*.war
-*.ear
-.classpath
-.project
-.settings/
-bin/
+
 
 ### OS
 .DS_Store
